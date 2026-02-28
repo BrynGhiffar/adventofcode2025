@@ -1,10 +1,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define SURRN 16
+
 int count(char* grid, int width, int height) {
 	int res = 0;
-	int surr[] = { 0, -1, 1, -1, 1, 0, 1, 1, 0, 1, -1, 1, -1, 0, -1, -1 };
-	const int SURRN = 16;
+	int surr[SURRN] = { 
+		0, -1, 
+		1, -1, 
+		1, 0, 
+		1, 1, 
+		0, 1, 
+		-1, 1, 
+		-1, 0, 
+		-1, -1
+	};
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
 			int surround = 0;
